@@ -13,10 +13,10 @@ var connector = new builder.ChatConnector({
     appPassword: process.env.MICROSOFT_APP_PASSWORD
 });
 
-// server.get('/', restify.serveStatic({
-//     directory: __dirname,
-//     default: '/index.html'
-// }));
+server.get('/', restify.serveStatic({
+    directory: __dirname,
+    default: '/index.html'
+}));
 
 server.post('/api/messages', connector.listen());
 
